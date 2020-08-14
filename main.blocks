@@ -1,0 +1,503 @@
+<xml xmlns="https://developers.google.com/blockly/xml"><variables><variable type="KIND_SpriteKind" id="zmjnh6j1j,T/6hvPaOyc">Player</variable><variable type="KIND_SpriteKind" id="4Y2}0s]+QTGc|jcdcu,H">Projectile</variable><variable type="KIND_SpriteKind" id="%X7eYHax;jok3C%no.E=">Food</variable><variable type="KIND_SpriteKind" id="g4)M%dmR[ZL~WwS3%%aZ">Enemy</variable><variable type="KIND_SpriteKind" id="(XTB].7vVR_%/GmZ8^@q">Energía</variable><variable type="KIND_SpriteKind" id="Ye?sdU+/wF`S1:;2KrvC">Puerta</variable><variable id="||p.7KXYT]xX~@7GgE08">mySprite</variable><variable id="7g{Z~o]{#q1wsZuUaSo=">Mario</variable><variable id="!x6a`|!I]y9hC*W9!{X^">Poder</variable><variable id="I+m@XvT{]wuvd5Vh,S:C">Arma</variable><variable id=",..H#hUI@xI1aAWn7xT#">projectile</variable><variable id="YD{wkXOai-6opt=KJhb1">fantasmalgia</variable><variable id="+HA@8i22iq#k?49(@H@!">puerta_mágica1</variable><variable id="^XBfv~SL+]7mgUZTgi.q">Energia1</variable><variable id="D2OoxsjW,psW~5mS@#y=">Cazador</variable><variable id="!$xe-yT-@`}cOBh5`!1W">myEnemy</variable><variable id="$+a_d=daw8Rg~A18oTEN">Cazador2</variable><variable id="J7Ijwb*0#-DolRt(y*CB">Cazador3</variable></variables><block type="pxt-on-start" id="7UyBf+0J{t%kG(0B`WO;" x="200" y="0"><statement name="HANDLER"><block type="tilemap_editor" id="XN?ykC(7pQN}z1fMpFxa"><field name="tilemap">tiles.createTilemap(hex`32000c00030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030300000000000000000000000000000000000000000000000000000000000000000003000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000030003000000000101010100000000000000000000000000000000000000000000000000000000000000000000000100010000000000000000030303030000000000000000000000000000000000000000000000000000010101010101010101000200010000010303030300000000000100000000000000000000000000000000000000000000000000000000000000000000000000020200000000000101000101000101000000000000000000000000000000000000000101010000000000000000000100000000000000000000000000010202020200000000000000000000000000000101010101000000010000000000000001020100000000000000000100000001020202020000000000000000000000000000000000000000000000010000000000010202020100000000000000010000000102020202000000000000000000010101010000000000000000000000010000000102020202010000000101010101000000010202020200000000000000000000000000000000000000000000000000000001020202020201000000000000000000010202020202020101010101010101010202020202010101020101010101010101010202020202020201010101010101010102020202020202`, img`
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2 2 2 . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 . 2 . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . 2 2 2 2 2 2 2 2 2 . . . 2 . . 2 . . . . . . . . . 2 . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2 . 2 2 . 2 2 
+. . . . . . . . . . . . . . . . . . . 2 2 2 . . . . . . . . . 2 . . . . . . . . . . . . . 2 . . . . 
+. . . . . . . . . . . . . . 2 2 2 2 2 . . . 2 . . . . . . . 2 . 2 . . . . . . . . 2 . . . 2 . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . 2 . . . . . 2 . . . 2 . . . . . . . 2 . . . 2 . . . . 
+. . . . . . . . . 2 2 2 2 . . . . . . . . . . . 2 . . . 2 . . . . 2 . . . 2 2 2 2 2 . . . 2 . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . 2 . . . . . 2 . . . . . . . . . 2 . . . . . . 
+2 2 2 2 2 2 2 2 2 . . . . . 2 2 2 . 2 2 2 2 2 2 2 2 2 . . . . . . . 2 2 2 2 2 2 2 2 2 . . . . . . . 
+`, [myTiles.transparency16,myTiles.tile1,myTiles.tile2,myTiles.tile3], TileScale.Sixteen)</field><next><block type="gamesetbackgroundimage" id="K9BSE~KbCHSSq/Og%Dcu"><value name="img"><shadow type="background_image_picker" id="WdK?.47w[^|wBn[/Jqe["><field name="img">img`
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+`</field></shadow></value><next><block type="function_call" id="gxAlbe#$$|qAOUzdQ?f:"><mutation name="nivel_1" functionid=";%w@Tk/eRBOq]2P=MY$-"/></block></next></block></next></block></statement></block><block type="function_definition" id="B!85m6TErLR$$N}EYL!E" x="90" y="230"><mutation name="mario" functionid="o)Jib}ddZ?j#Y+W*%][$"><arg name="x" id="R}60?fgUa{}w3(d*kx~|" type="number"/><arg name="y" id="9k3m`i8|ypb[`*67L(0[" type="number"/><arg name="life" id="72A?7x3e*#r5P.LvLPnw" type="number"/><arg name="score" id="[eSNS-wtEdeAbQyj}jLP" type="number"/></mutation><field name="function_name">mario</field><statement name="STACK"><block type="variables_set" id="nCXK9I@9zO$8lySw-qmc"><field name="VAR" id="7g{Z~o]{#q1wsZuUaSo=">Mario</field><value name="VALUE"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number"><field name="NUM">0</field></shadow><block type="spritescreate" id="N:4*%,ZzoAxrZD?+l6!Y"><value name="img"><shadow type="screen_image_picker" id="D_?R3}`o`?dWITHz)CEZ"><field name="img">img`
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . f f f f f . . . . . . . . . . 
+. . . . . . . f f b 1 1 1 1 f f . . . . . . . . 
+. . . . . . f b 1 1 1 1 1 1 1 b f . . . . . . . 
+. . . . . . f 1 1 1 1 1 1 1 1 1 f . . . . . . . 
+. . . . . f f f f 1 1 1 1 1 1 1 d f . . . . . . 
+. . . . f b 1 1 1 c 1 d d 1 1 1 d f . . . . . . 
+. . . . f f b 1 b 1 f d c f 1 1 b f . . . . . . 
+. . . . . f f b f b f b 1 1 1 1 1 f . . . . . . 
+. . . . . . f f f f c f d b 1 b 1 f . . . . . . 
+. . . . . . . f c c c f c f b f b f . . . . . . 
+. . . . . . . . f f f f f f f f f f . . . . . . 
+. . . . . . . . . f f f f f f . . . . . . . . . 
+. . . . . . . . . f f f f f f . . . . . . . . . 
+. . . . . f . . f f f f f f f . . . . . . . . . 
+. . . . . f f f f f f f f f . . . . . . . . . . 
+. . . . . . f f f f f f f . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+`</field></shadow></value><value name="kind"><shadow type="spritekind" id="N[5aCViPBUNh(xkJB-,T"><field name="MEMBER">Player</field></shadow></value></block></value><next><block type="game_control_sprite" id="rmb*O*caNdf0].o6iZe;"><mutation xmlns="http://www.w3.org/1999/xhtml" _expanded="0" _input_init="false"></mutation><value name="sprite"><block type="variables_get" id="XaPU`4L,[*6BEP4{gs]`"><field name="VAR" id="7g{Z~o]{#q1wsZuUaSo=">Mario</field></block></value><next><block type="camerafollow" id="by.]*tic)FG_$}gD;D/)"><value name="sprite"><block type="variables_get" id="Hg~_`4Z%rd!29u)~w|6v"><field name="VAR" id="7g{Z~o]{#q1wsZuUaSo=">Mario</field></block></value><next><block type="Sprite_blockCombine_set" id="Fa1m`@u?rUZtWATNSj?}"><field name="property">Sprite.ay@set</field><value name="mySprite"><block type="variables_get" id="xO$#v.[6b+0v^1j5M?!3"><field name="VAR" id="7g{Z~o]{#q1wsZuUaSo=">Mario</field></block></value><value name="value"><shadow type="math_number" id="9eu!e)*C0|.70+.+i^fn"><field name="NUM">200</field></shadow></value><next><block type="spritesetpos" id="`bv]`2t{k]kf:j7SM%|l"><value name="sprite"><block type="variables_get" id="D|!xZ{l.-T@[43lzkWaG"><field name="VAR" id="7g{Z~o]{#q1wsZuUaSo=">Mario</field></block></value><value name="x"><shadow type="positionPicker"><field name="index">200</field></shadow><block type="argument_reporter_number" id="V:RKX%7Rm*iR~vtI_{|f"><field name="VALUE">x</field></block></value><value name="y"><shadow type="positionPicker"><field name="index">100</field></shadow><block type="argument_reporter_number" id="Hgmb~t:`x]RNj!jLhLEH"><field name="VALUE">y</field></block></value><next><block type="hudSetLife" id="2aO+=`0BpfXzZ+?%mmEP"><value name="value"><shadow type="math_number"><field name="NUM">3</field></shadow><block type="argument_reporter_number" id="t?V;)d6UbvX=^y]Ue!_h"><field name="VALUE">life</field></block></value><next><block type="hudsetScore" id="?BU:P@Sptr;ATGyhG(~?"><value name="value"><shadow type="math_number"><field name="NUM">0</field></shadow><block type="argument_reporter_number" id="5811;Z[T[=s}yY;5(OJx"><field name="VALUE">score</field></block></value></block></next></block></next></block></next></block></next></block></next></block></next></block></statement></block><block type="spritesoverlap" id="]B=en^FMs_MD~6|LB2*i" x="930" y="230"><value name="HANDLER_DRAG_PARAM_sprite"><shadow type="argument_reporter_custom" id="v*:ook?3J/BwkW^||IwL"><mutation typename="Sprite"/><field name="VALUE">sprite</field></shadow></value><value name="kind"><shadow type="spritekind" id="N:bvG^fd4J?kCj(kG9r("><field name="MEMBER">Projectile</field></shadow></value><value name="HANDLER_DRAG_PARAM_otherSprite"><shadow type="argument_reporter_custom" id=":kv5FQ6ORP~Z!N1CxZ~r"><mutation typename="Sprite"/><field name="VALUE">otherSprite</field></shadow></value><value name="otherKind"><shadow type="spritekind" id="D`L7;q#{3XN9b*(5Rw`%"><field name="MEMBER">Enemy</field></shadow></value><statement name="HANDLER"><block type="particlesclearparticles" id="lMr`E2^Dvd0!hj@Ug4%?"><value name="anchor"><block type="variables_get" id="f]5Ob4`3MAxn6IAJZmcH"><field name="VAR" id="7g{Z~o]{#q1wsZuUaSo=">Mario</field></block></value><next><block type="spritedestroy" id="`CLL1pQ4]eMbn%vVo_a!"><mutation xmlns="http://www.w3.org/1999/xhtml" _expanded="0" _input_init="false"></mutation><value name="sprite"><block type="argument_reporter_custom" id="+`r6VS|/Mk@[p6sbW|:6"><mutation typename="Sprite"/><field name="VALUE">otherSprite</field></block></value><next><block type="hudChangeScoreBy" id="{PH1*8Q1Ayt,y/[8:8lP"><value name="value"><shadow type="math_number" id="MDm%WP:!.7!^e764S{U!"><field name="NUM">5</field></shadow></value></block></next></block></next></block></statement></block><block type="keyonevent" id="q9E7LuHp]T{7Gg|mFMwT" x="1170" y="310"><field name="button">controller.down</field><field name="event">ControllerButtonEvent.Pressed</field><statement name="HANDLER"><block type="spritesetimage" id="(E0md+c@6Cp1VTu/O=C="><value name="sprite"><block type="variables_get" id="?hG5kH+l8Q%M1F5PYB|v"><field name="VAR" id="7g{Z~o]{#q1wsZuUaSo=">Mario</field></block></value><value name="img"><shadow type="screen_image_picker" id="P#ix4:U~?;F8#,SSKE%y"><field name="img">img`
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . f f f f . . . . . . . . . . 
+. . . . . . . . f f 1 1 1 1 f f . . . . . . . . 
+. . . . . . . f b 1 1 1 1 1 1 b f . . . . . . . 
+. . . . . . . f 1 1 1 1 1 1 1 1 f . . . . . . . 
+. . . . . . f d 1 1 1 1 1 1 1 1 d f . . . . . . 
+. . . . 7 . f d 1 1 1 1 1 1 1 1 d f . . . . . . 
+. . . 7 . . f d 1 1 1 1 1 1 1 1 d f . . . . . . 
+. . . 7 . . f d 1 1 1 1 1 1 1 1 d f . . . . . . 
+. . . 7 . . f d d d 1 1 1 1 d d d f f . . . . . 
+. . . 7 7 . f b d b f d d f b d b f c f . . . . 
+. . . 7 7 7 f c d c f 1 1 f c d c f b f . . . . 
+. . . . 7 7 f f f b d b 1 b d f f c f . . . . . 
+. . . . f c b 1 b c f f f f f f . . . . . . . . 
+. . . . f 1 c 1 c 1 f f f f f f . . . . . . . . 
+. . . . f d f d f d f f f f f . . . . . . . . . 
+. . . . . f . f . f . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+`</field></shadow></value></block></statement></block><block type="keyonevent" id="K@1=TJ)Q5kt+$mBQro]G" x="1530" y="370"><field name="button">controller.left</field><field name="event">ControllerButtonEvent.Pressed</field><statement name="HANDLER"><block type="spritesetimage" id="T;KZ#72Hc`i(~74Y23=]"><value name="sprite"><block type="variables_get" id="A9,Q},Y$=;+Rs@GA4tZ3"><field name="VAR" id="7g{Z~o]{#q1wsZuUaSo=">Mario</field></block></value><value name="img"><shadow type="screen_image_picker" id="@G26BA@8q2t_Yrbb%Wx,"><field name="img">img`
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . f f f f f . . . . . . . . . 
+. . . . . . . . f f 1 1 1 1 b f f . . . . . . . 
+. . . . . . . f b 1 1 1 1 1 1 1 b f . . . . . . 
+. . . . . . . f 1 1 1 1 1 1 1 1 1 f . . . . . . 
+. . . . . . f d 1 1 1 1 1 1 1 f f f f . . . . . 
+. . . . . . f d 1 1 1 d d 1 c 1 1 1 b f . . . . 
+. . . . . . f b 1 1 f c d f 1 b 1 b f f . . . . 
+. . . . . . f 1 1 1 1 1 b f b f b f f . . . . . 
+. . . . . . f 1 b 1 b d f c f f f f . . . . . . 
+. . . . . . f b f b f c f c c c f . . . . . . . 
+. . . . . . f f f f f f f f f f . . . . . . . . 
+. . . . . . . . . f f f f f f . . . . . . . . . 
+. . . . . . . . . f f f f f f . . . . . . . . . 
+. . . . . . . . . f f f f f f f . . f . . . . . 
+. . . . . . . . . . f f f f f f f f f . . . . . 
+. . . . . . . . . . . f f f f f f f . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+`</field></shadow></value></block></statement></block><block type="function_definition" id="6/{JzWGA:GcZA^=RHSyd" x="590" y="450"><mutation name="cazador" functionid="JCNmm/L)rD,$OPxu!bdA"><arg name="x" id="/x0.F{PfKEy1_QJWb8NT" type="number"/><arg name="y" id="gcv-jP6hAR*qOJxEt^XO" type="number"/></mutation><field name="function_name">cazador</field><statement name="STACK"><block type="variables_set" id="gigPif~~?Nf0?[hM:uT/"><field name="VAR" id="D2OoxsjW,psW~5mS@#y=">Cazador</field><value name="VALUE"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number"><field name="NUM">0</field></shadow><block type="spritescreate" id="UQvXz*$H^t(W($;bh|X:"><value name="img"><shadow type="screen_image_picker" id="f=WtL@[u:]HLCdrq~-ZJ"><field name="img">img`
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . f f f . . . . . . . 
+. . . . . . . . . . . . . f 2 f f f f f . . . . 
+. . . . . . . . . . . f f 2 2 e e e e e f f . . 
+. . . . . . . . . . f f 2 2 2 e e e e e e f f . 
+. . . . . . . . . . f e e e e f f f e e e e f . 
+. . . . . . . . . f e 2 2 2 2 e e e f f f f f . 
+. . . . . . . . . f 2 e f f f f f 2 2 2 e f f f 
+. . c c . . . . . f f f e e e f f f f f f f f f 
+. . c d c c . . . f e e 4 4 f b b e 4 4 e f e f 
+. . c c d d c c . . f e d d f b b 4 d 4 e e f . 
+. . . . c d d d c e e f d d d d d 4 e e e f . . 
+. . . . . c c d c d d e e 2 2 2 2 2 2 2 f . . . 
+. . . . . . c c c d d 4 4 e 5 4 4 4 4 4 f . . . 
+. . . . . . . . . e e e e f f f f f f f f . . . 
+. . . . . . . . . . . . . f f . . . f f f . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+`</field></shadow></value><value name="kind"><shadow type="spritekind" id="%)LPr8s|5T|Yj+/i88$D"><field name="MEMBER">Enemy</field></shadow></value></block></value><next><block type="Sprite_blockCombine_set" id="BBKtX$yB`vI.=L@iuYTj"><field name="property">Sprite.ay@set</field><value name="mySprite"><block type="variables_get" id="P%y,v3S.NSB@.vpBjKJ9"><field name="VAR" id="D2OoxsjW,psW~5mS@#y=">Cazador</field></block></value><value name="value"><shadow type="math_number" id="9kF)BWRzz;MPP?,2R[47"><field name="NUM">200</field></shadow></value><next><block type="spritesetpos" id="C]KyqktM[tR/w7zIza?p"><value name="sprite"><block type="variables_get" id="K@z3[%[))?cZbvs[7hiQ"><field name="VAR" id="D2OoxsjW,psW~5mS@#y=">Cazador</field></block></value><value name="x"><shadow type="positionPicker"><field name="index">0</field></shadow><block type="argument_reporter_number" id="m}=Sto`3v5uJ]_j0{zZJ"><field name="VALUE">x</field></block></value><value name="y"><shadow type="positionPicker"><field name="index">0</field></shadow><block type="argument_reporter_number" id="`wOE/{@Ff%{fI,}bj]e2"><field name="VALUE">y</field></block></value><next><block type="spriteFollowOtherSprite" id="-^WumflF8jw/R.Txiu71"><mutation xmlns="http://www.w3.org/1999/xhtml" _expanded="0" _input_init="false"></mutation><value name="sprite"><block type="variables_get" id="*acV;WqU)|=gts56`yl*"><field name="VAR" id="D2OoxsjW,psW~5mS@#y=">Cazador</field></block></value><value name="target"><block type="variables_get" id="%e+77h]W4-fNfs{H+BSP"><field name="VAR" id="7g{Z~o]{#q1wsZuUaSo=">Mario</field></block></value></block></next></block></next></block></next></block></statement></block><block type="function_definition" id="^6[P;~iYP,mUC83oa?Ge" x="1870" y="450"><mutation name="puerta_1" functionid="mz!`n6|FlY$kY~[(`T{|"><arg name="x" id="Qt(5!_PQW8;nK)%]FBSf" type="number"/><arg name="y" id="a7P%jBmJ2znez#%Ve;7j" type="number"/></mutation><field name="function_name">puerta_1</field><statement name="STACK"><block type="variables_set" id="9ecQK3FGZ4@maO%F6.xH"><field name="VAR" id="+HA@8i22iq#k?49(@H@!">puerta_mágica1</field><value name="VALUE"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number"><field name="NUM">0</field></shadow><block type="spritescreate" id="g*-_6h9txAS$=HBQ$d*R"><value name="img"><shadow type="screen_image_picker" id=".Uq@166pAPH~0J/L2bg8"><field name="img">img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . f f f f . . . . . 
+. . . . . f f 7 7 7 f . . . . . 
+. . . . f f 7 a a 7 f f . . . . 
+. . . . f 7 a a a 7 7 7 f . . . 
+. . . . f 7 a c a a 7 7 f . . . 
+. . . . f 7 a b a a a 7 7 f . . 
+. . . . f 7 a b a a a a 7 f . . 
+. . . . f f 7 c a a a a 7 f . . 
+. . . . . f 7 a a 7 7 7 7 f . . 
+. . . . . f 7 7 a 7 f f f f . . 
+. . . . . f f 7 7 7 f . . . . . 
+. . . . . . f f f f . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`</field></shadow></value><value name="kind"><shadow type="spritekind" id="wKv-.(R4=k})x-p_48h{"><field name="MEMBER">Puerta</field></shadow></value></block></value><next><block type="spritesetpos" id="E7oS:B79GfdN[`Xpn$n2"><value name="sprite"><block type="variables_get" id="@Y5#I/k6c,x;I]@[B+W]"><field name="VAR" id="+HA@8i22iq#k?49(@H@!">puerta_mágica1</field></block></value><value name="x"><shadow type="positionPicker"><field name="index">0</field></shadow><block type="argument_reporter_number" id="/PJA{=w{@OyYA*ZhF7j9"><field name="VALUE">x</field></block></value><value name="y"><shadow type="positionPicker"><field name="index">0</field></shadow><block type="argument_reporter_number" id="*7|^oyZ;`GJGK?(B~xk|"><field name="VALUE">y</field></block></value></block></next></block></statement></block><block type="function_definition" id="$a!gRY,SsQkdA`f,!nO3" x="1460" y="620"><mutation name="nivel_1" functionid=";%w@Tk/eRBOq]2P=MY$-"/><field name="function_name">nivel_1</field><statement name="STACK"><block type="function_call" id="[S$Wdm$5Yr)51dV-yQ|9"><mutation name="mario" functionid="o)Jib}ddZ?j#Y+W*%][$"><arg name="x" id="R}60?fgUa{}w3(d*kx~|" type="number"/><arg name="y" id="9k3m`i8|ypb[`*67L(0[" type="number"/><arg name="life" id="72A?7x3e*#r5P.LvLPnw" type="number"/><arg name="score" id="[eSNS-wtEdeAbQyj}jLP" type="number"/></mutation><value name="R}60?fgUa{}w3(d*kx~|"><shadow type="math_number" id="%hmT8bWoQ`6;t[6]a)e,"><field name="NUM">200</field></shadow></value><value name="9k3m`i8|ypb[`*67L(0["><shadow type="math_number" id="Mf}W$Rfv*,tM|?lI9Wf!"><field name="NUM">100</field></shadow></value><value name="72A?7x3e*#r5P.LvLPnw"><shadow type="math_number" id="UF4@}+sao#%*_[xGsi#U"><field name="NUM">3</field></shadow></value><value name="[eSNS-wtEdeAbQyj}jLP"><shadow type="math_number" id="nwU~BhIfV[P7Z#W94@)G"><field name="NUM">0</field></shadow></value><next><block type="function_call" id="]eeaO/nisUQSoaR1K*@]"><mutation name="puerta_1" functionid="mz!`n6|FlY$kY~[(`T{|"><arg name="x" id="Qt(5!_PQW8;nK)%]FBSf" type="number"/><arg name="y" id="a7P%jBmJ2znez#%Ve;7j" type="number"/></mutation><value name="Qt(5!_PQW8;nK)%]FBSf"><shadow type="math_number" id="oN_7I{aw*9=Ol%$%1^)+"><field name="NUM">596</field></shadow></value><value name="a7P%jBmJ2znez#%Ve;7j"><shadow type="math_number" id="l_Ox%MguA+~l^h^73W|h"><field name="NUM">56</field></shadow></value><next><block type="function_call" id="G}R,nezp8xmwJtarm6AE"><mutation name="cazador" functionid="JCNmm/L)rD,$OPxu!bdA"><arg name="x" id="/x0.F{PfKEy1_QJWb8NT" type="number"/><arg name="y" id="gcv-jP6hAR*qOJxEt^XO" type="number"/></mutation><value name="/x0.F{PfKEy1_QJWb8NT"><shadow type="math_number" id="X{uFy1~cO0tj)Dg9bO6-"><field name="NUM">596</field></shadow></value><value name="gcv-jP6hAR*qOJxEt^XO"><shadow type="math_number" id="_q{R~gt|vKE$V!wn%m[Q"><field name="NUM">56</field></shadow></value><next><block type="function_call" id="1*kq7BR=b(?oa[L9~)I#"><mutation name="cazador2" functionid="K8D7}XnH~}_3;ZpXG/|-"><arg name="x" id="/x0.F{PfKEy1_QJWb8NT" type="number"/><arg name="y" id="gcv-jP6hAR*qOJxEt^XO" type="number"/></mutation><value name="/x0.F{PfKEy1_QJWb8NT"><shadow type="math_number" id="K9$d(c~-`qCEQGvK;aWK"><field name="NUM">600</field></shadow></value><value name="gcv-jP6hAR*qOJxEt^XO"><shadow type="math_number" id="mX1Ut+7:{cw5-agM/2Fy"><field name="NUM">90</field></shadow></value><next><block type="function_call" id="?3fD;umkYJ3=$vwl#=Eu"><mutation name="cazador3" functionid="PII[,3|uB4]+g}G_vtKf"><arg name="x" id="/x0.F{PfKEy1_QJWb8NT" type="number"/><arg name="y" id="gcv-jP6hAR*qOJxEt^XO" type="number"/></mutation><value name="/x0.F{PfKEy1_QJWb8NT"><shadow type="math_number" id="DXcBD73eb|EK.F_AWx,C"><field name="NUM">234</field></shadow></value><value name="gcv-jP6hAR*qOJxEt^XO"><shadow type="math_number" id="KLiw4NVoD9KPcD)zEod+"><field name="NUM">78</field></shadow></value></block></next></block></next></block></next></block></next></block></statement></block><block type="keyonevent" id="RXyvPtwkz#O@/G~!yfrU" x="1030" y="650"><field name="button">controller.up</field><field name="event">ControllerButtonEvent.Pressed</field><statement name="HANDLER"><block type="spritesetimage" id="KD:)bvrTrHx0zU2;}618"><value name="sprite"><block type="variables_get" id="5)stiocS1;cU(R!(E{=n"><field name="VAR" id="7g{Z~o]{#q1wsZuUaSo=">Mario</field></block></value><value name="img"><shadow type="screen_image_picker" id="3zXro#BdtxJ5($|^5cY9"><field name="img">img`
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . f f f f . . . . . . . . . . 
+. . . . . . . . f f 1 1 1 1 f f . . . . . . . . 
+. . . . . . . f b 1 1 1 1 1 1 b f . . . . . . . 
+. . . . . f f f c 1 1 1 1 1 1 1 f . . . . . . . 
+. . . f c 1 1 1 c d 1 1 1 1 1 1 1 f . . . . . . 
+. . . f 1 b 1 b 1 b 1 1 1 1 d d d f . . . . . . 
+. . . f b f b f f c f 1 1 f c d d f . . . . . . 
+. . . . . . f c f 1 1 1 1 1 1 b b f . . . . . . 
+. . . . . . . c c b d b 1 b 1 f c f . . . . . . 
+. . . . . . . f f f b f b f d f f . . . . . . . 
+. . . . . . . . f f f f f f f f . . . . . . . . 
+. . . . . . . . f f f f f f f f f f f . . . . . 
+. . . . . . . . . f f f f f c 1 1 1 c f . . . . 
+. . . . . . . . . f f f f f 1 b 1 b 1 f . . . . 
+. . . . . . . . . . f f f f b f b f b f . . . . 
+. . . . . . . . . . . f f f f . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+`</field></shadow></value></block></statement></block><block type="keyonevent" id=")qHpoW[}q3w~,{;`iwx-" x="694" y="829"><field name="button">controller.A</field><field name="event">ControllerButtonEvent.Pressed</field><statement name="HANDLER"><block type="variables_set" id="%eRTA[ebDSLJ+)i)4aQx"><field name="VAR" id=",..H#hUI@xI1aAWn7xT#">projectile</field><value name="VALUE"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number"><field name="NUM">0</field></shadow><block type="spritescreateprojectilefromsprite" id="pc95e{]Mw4x2)GI/qZb@"><value name="img"><shadow type="screen_image_picker"><field name="img">img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . 7 7 7 7 7 . . . . . 
+. . . . . . 7 7 7 7 7 . . . . . 
+. . . . . . 7 7 7 7 7 . . . . . 
+. . . . . . 7 7 7 7 7 . . . . . 
+. . . . . . 7 7 7 7 7 . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`</field></shadow><block type="screen_image_picker" id="alqms4B?z8E7rOkN?bNZ"><field name="img">img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . 7 7 7 7 7 . . . . . 
+. . . . . . 7 7 a 7 7 . . . . . 
+. . . . . . 7 a a a 7 . . . . . 
+. . . . . . 7 7 a 7 7 . . . . . 
+. . . . . . 7 7 7 7 7 . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`</field></block></value><value name="sprite"><block type="variables_get" id="e8+CMAWAH5DVZ^P[UanR"><field name="VAR" id="7g{Z~o]{#q1wsZuUaSo=">Mario</field></block></value><value name="vx"><shadow type="spriteSpeedPicker" id=":yvEq`Z9HM!`#`wgJCPL"><field name="speed">200</field></shadow></value><value name="vy"><shadow type="spriteSpeedPicker" id="qg#2V5#T,sZt/BdW4n~R"><field name="speed">0</field></shadow></value></block></value></block></statement></block><block type="keyonevent" id="3q$IQ23M/hVXO@MjBP[b" x="1030" y="870"><field name="button">controller.right</field><field name="event">ControllerButtonEvent.Pressed</field><statement name="HANDLER"><block type="spritesetimage" id="JZU5*Ex${xmN?MowiqRU"><value name="sprite"><block type="variables_get" id="FVY(-G|27EOESit?Fmp^"><field name="VAR" id="7g{Z~o]{#q1wsZuUaSo=">Mario</field></block></value><value name="img"><shadow type="screen_image_picker" id=":fD]j+g85yJ,3pm3T0P/"><field name="img">img`
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . f f f f f . . . . . . . . . . 
+. . . . . . . f f b 1 1 1 1 f f . . . . . . . . 
+. . . . . . f b 1 1 1 1 1 1 1 b f . . . . . . . 
+. . . . . . f 1 1 1 1 1 1 1 1 1 f . . . . . . . 
+. . . . . f f f f 1 1 1 1 1 1 1 d f . . . . . . 
+. . . . f b 1 1 1 c 1 d d 1 1 1 d f . . . . . . 
+. . . . f f b 1 b 1 f d c f 1 1 b f . . . . . . 
+. . . . . f f b f b f b 1 1 1 1 1 f . . . . . . 
+. . . . . . f f f f c f d b 1 b 1 f . . . . . . 
+. . . . . . . f c c c f c f b f b f . . . . . . 
+. . . . . . . . f f f f f f f f f f . . . . . . 
+. . . . . . . . . f f f f f f . . . . . . . . . 
+. . . . . . . . . f f f f f f . . . . . . . . . 
+. . . . . f . . f f f f f f f . . . . . . . . . 
+. . . . . f f f f f f f f f . . . . . . . . . . 
+. . . . . . f f f f f f f . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+`</field></shadow></value></block></statement></block><block type="spritesoverlap" id="cFgdkFQzmO(P{GG^5e!a" x="2430" y="830"><value name="HANDLER_DRAG_PARAM_sprite"><shadow type="argument_reporter_custom" id="nSOL^pye}dEdO+XRK/gN"><mutation typename="Sprite"/><field name="VALUE">sprite</field></shadow></value><value name="kind"><shadow type="spritekind" id="FjVn{QB6*0OI1tQOUXPN"><field name="MEMBER">Player</field></shadow></value><value name="HANDLER_DRAG_PARAM_otherSprite"><shadow type="argument_reporter_custom" id="/6L=xgrY-c+t%s@GUHSb"><mutation typename="Sprite"/><field name="VALUE">otherSprite</field></shadow></value><value name="otherKind"><shadow type="spritekind" id="rBV4f|er59VGqYQ)?OH3"><field name="MEMBER">Puerta</field></shadow></value><statement name="HANDLER"><block type="spritedestroy" id="$VCLG6aZb768B8bCl|#E"><mutation xmlns="http://www.w3.org/1999/xhtml" _expanded="0" _input_init="false"></mutation><value name="sprite"><block type="variables_get" id="*hj8N9I;O#/!M}J0EJ2Y"><field name="VAR" id="+HA@8i22iq#k?49(@H@!">puerta_mágica1</field></block></value><next><block type="variables_set" id="#}m$!#)l^=.}LRx6f9G+"><field name="VAR" id="$+a_d=daw8Rg~A18oTEN">Cazador2</field><value name="VALUE"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number"><field name="NUM">0</field></shadow><block type="spritescreate" id="10sufN-!_ns^!8`}q`x="><value name="img"><shadow type="screen_image_picker" id="XZ+aHv@|#tJpr8/NJ0cR"><field name="img">img`
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . f f f . . . . . . . . . . . . . . 
+. . . . f f f f f 2 f . . . . . . . . . . . . . 
+. . f f e e e e e 2 2 f f . . . . . . . . . . . 
+. f f e e e e e e 2 2 2 f f . . . . . . . . . . 
+. f e e e e f f f e e e e f . . . . . . . . . . 
+. f f f f f e e e 2 2 2 2 e f . . . . . . . . . 
+f f f e 2 2 2 f f f f f e 2 f . . . . . . . . . 
+f f f f f f f f f e e e f f f . . . . . c c . . 
+f e f e 4 4 e b b f 4 4 e e f . . . c c d c . . 
+. f e e 4 d 4 b b f d d e f . . c c d d c c . . 
+. . f e e e 4 d d d d d f e e c d d d c . . . . 
+. . . f 2 2 2 2 2 2 2 e e d d c d c c . . . . . 
+. . . f 4 4 4 4 4 5 e 4 4 d d c c c . . . . . . 
+. . . f f f f f f f f e e e e . . . . . . . . . 
+. . . f f f . . . f f . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+`</field></shadow></value><value name="kind"><shadow type="spritekind" id=".R,a|B3O#QdxM8^ov#V`"><field name="MEMBER">Enemy</field></shadow></value></block></value><next><block type="variables_set" id="i6`=LTz^.G[dr09PG3Oy"><field name="VAR" id="J7Ijwb*0#-DolRt(y*CB">Cazador3</field><value name="VALUE"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number"><field name="NUM">0</field></shadow><block type="spritescreate" id="s*rvKio6`gHbVx:p}!*r"><value name="img"><shadow type="screen_image_picker" id="p3(pb,v_z0duHqujR21]"><field name="img">img`
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . f f f . . . . . . . . . . . . . . 
+. . . . f f f f f 2 f . . . . . . . . . . . . . 
+. . f f f f f f f 2 2 f f . . . . . . . . . . . 
+. f f f f f f f f 2 2 2 f f . . . . . . . . . . 
+. f f f f f f f f f f f f f . . . . . . . . . . 
+. f f f f f f f f 2 2 2 2 f f . . . . . . . . . 
+f f f f 2 2 2 f f f f f f 2 f . . . . . . . . . 
+f f f f f f f f f f f f f f f . . . . . c c . . 
+f f f f 4 4 e b b f 4 4 f f f . . . c c d c . . 
+. f f f 4 d 4 b b f d d f f . . c c d d c c . . 
+. . f f f f 4 d d d d d f f f c d d d c . . . . 
+. . . f 2 2 2 2 2 2 2 f f d d c d c c . . . . . 
+. . . f 4 4 4 4 4 5 f 4 4 d d c c c . . . . . . 
+. . . f f f f f f f f f f f f . . . . . . . . . 
+. . . f f f . . . f f . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+`</field></shadow></value><value name="kind"><shadow type="spritekind" id="KAJc]tZlYw@f?Agi[Avh"><field name="MEMBER">Enemy</field></shadow></value></block></value><next><block type="tilemap_editor" id="Y2O@Y#K.M~sK#Ja}D5yD"><field name="tilemap">tiles.createTilemap(hex`320010000101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000202020202000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000`, img`
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+`, [myTiles.transparency16,myTiles.tile5,myTiles.tile6], TileScale.Sixteen)</field></block></next></block></next></block></next></block></statement></block><block type="spritesoverlap" id="]x5xV(XNzpSsD|5@9SUi" x="0" y="980"><value name="HANDLER_DRAG_PARAM_sprite"><shadow type="argument_reporter_custom" id="]bSFe7(d#XQ!7ppLoG?t"><mutation typename="Sprite"/><field name="VALUE">sprite</field></shadow></value><value name="kind"><shadow type="spritekind" id=":u`^!kD)1|9^Pe{5]Ube"><field name="MEMBER">Enemy</field></shadow></value><value name="HANDLER_DRAG_PARAM_otherSprite"><shadow type="argument_reporter_custom" id="DBf_;k(W9e4-}Hx}qUPQ"><mutation typename="Sprite"/><field name="VALUE">otherSprite</field></shadow></value><value name="otherKind"><shadow type="spritekind" id="3g:9AC-+[q=,w:%W_0E-"><field name="MEMBER">Player</field></shadow></value><statement name="HANDLER"><block type="hudChangeLifeBy" id="%?)E^Y/P+Q~9R=!5rFIQ"><value name="value"><shadow type="math_number" id="_qtis~OfSO0nC!{@bne^"><field name="NUM">-1</field></shadow></value><next><block type="spritesetpos" id="gYnQ_?R=wM1]Oy]4!@7@"><value name="sprite"><block type="variables_get" id="BNU8eAT48o9,WCBRM{(Z"><field name="VAR" id="7g{Z~o]{#q1wsZuUaSo=">Mario</field></block></value><value name="x"><shadow type="positionPicker" id="g#hZLvUscdlbB+kxr#a("><field name="index">1</field></shadow></value><value name="y"><shadow type="positionPicker" id=",zL0CB-^0CtPk!$n2)91"><field name="index">14</field></shadow></value></block></next></block></statement></block><block type="spriteshittile" id="h6@P7vC1mxb8.bInVAfQ" x="1620" y="940"><value name="HANDLER_DRAG_PARAM_sprite"><shadow type="argument_reporter_custom" id="*!.frKIJzl`$@?8=F~{="><mutation typename="Sprite"/><field name="VALUE">sprite</field></shadow></value><value name="kind"><shadow type="spritekind" id="_;8umSseom9;Xpavwz/B"><field name="MEMBER">Player</field></shadow></value><value name="tile"><shadow type="tileset_tile_picker"><field name="tile">myTiles.transparency16</field></shadow><block type="tileset_tile_picker" id="nGb+%(uK4JGM}N:!ur}."><field name="tile">myTiles.tile3</field></block></value><value name="HANDLER_DRAG_PARAM_location"><shadow type="argument_reporter_custom" id="Y|m9@$99zx/Ad:x(TCmV"><mutation typename="tiles.Location"/><field name="VALUE">location</field></shadow></value><statement name="HANDLER"><block type="hudChangeLifeBy" id="=}[46pSJ0aY84e74G#LK"><value name="value"><shadow type="math_number" id="/mb4qby*?6cK=zf3by];"><field name="NUM">-1</field></shadow></value><next><block type="spritesetpos" id="{FmNJ$g.:[6KM|,M.g}."><value name="sprite"><block type="variables_get" id="L4~,;V-Df]T]K!-1WF8M"><field name="VAR" id="7g{Z~o]{#q1wsZuUaSo=">Mario</field></block></value><value name="x"><shadow type="positionPicker" id=",Ec,$]frGat@{^kcfUVu"><field name="index">0</field></shadow></value><value name="y"><shadow type="positionPicker" id="$wP$Jz?lL*$d@`3j0%f$"><field name="index">30</field></shadow></value></block></next></block></statement></block><block type="function_definition" id="7SR(kJ8HSyHTnpt00A~d" x="830" y="990"><mutation name="cazador2" functionid="K8D7}XnH~}_3;ZpXG/|-"><arg name="x" id="/x0.F{PfKEy1_QJWb8NT" type="number"/><arg name="y" id="gcv-jP6hAR*qOJxEt^XO" type="number"/></mutation><field name="function_name">cazador2</field><statement name="STACK"><block type="variables_set" id="mPL/4F)GHKPyWo-`oUP1"><field name="VAR" id="$+a_d=daw8Rg~A18oTEN">Cazador2</field><value name="VALUE"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number"><field name="NUM">0</field></shadow><block type="spritescreate" id="xw#p4eb4nnP(#NgU}AW]"><value name="img"><shadow type="screen_image_picker"><field name="img">img`
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . f f f . . . . . . . . . . . . . . 
+. . . . f f f f f 2 f . . . . . . . . . . . . . 
+. . f f e e e e e 2 2 f f . . . . . . . . . . . 
+. f f e e e e e e 2 2 2 f f . . . . . . . . . . 
+. f e e e e f f f e e e e f . . . . . . . . . . 
+. f f f f f e e e 2 2 2 2 e f . . . . . . . . . 
+f f f e 2 2 2 f f f f f e 2 f . . . . . . . . . 
+f f f f f f f f f e e e f f f . . . . . c c . . 
+f e f e 4 4 e b b f 4 4 e e f . . . c c d c . . 
+. f e e 4 d 4 b b f d d e f . . c c d d c c . . 
+. . f e e e 4 d d d d d f e e c d d d c . . . . 
+. . . f 2 2 2 2 2 2 2 e e d d c d c c . . . . . 
+. . . f 4 4 4 4 4 5 e 4 4 d d c c c . . . . . . 
+. . . f f f f f f f f e e e e . . . . . . . . . 
+. . . f f f . . . f f . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+`</field></shadow><block type="screen_image_picker" id="el7)b./3Hez*.n$^~Aa8"><field name="img">img`
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . f f f . . . . . . . 
+. . . . . . . . . . . . . f 2 f f f f f . . . . 
+. . . . . . . . . . . f f 2 2 e e e e e f f . . 
+. . . . . . . . . . f f 2 2 2 e e e e e e f f . 
+. . . . . . . . . . f e e e e f f f e e e e f . 
+. . . . . . . . . f e 2 2 2 2 e e e f f f f f . 
+. . . . . . . . . f 2 e f f f f f 2 2 2 e f f f 
+. . c c . . . . . f f f e e e f f f f f f f f f 
+. . c d c c . . . f e e 4 4 f b b e 4 4 e f e f 
+. . c c d d c c . . f e d d f b b 4 d 4 e e f . 
+. . . . c d d d c e e f d d d d d 4 e e e f . . 
+. . . . . c c d c d d e e 2 2 2 2 2 2 2 f . . . 
+. . . . . . c c c d d 4 4 e 5 4 4 4 4 4 f . . . 
+. . . . . . . . . e e e e f f 1 f f f f f . . . 
+. . . . . . . . . . . . . f f . . . f f f . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+`</field></block></value><value name="kind"><shadow type="spritekind" id="63qq/j/v.@5*#4kA=dxS"><field name="MEMBER">Enemy</field></shadow></value></block></value><next><block type="Sprite_blockCombine_set" id="QKa[Aal[r+#yBq!(Leel"><field name="property">Sprite.ay@set</field><value name="mySprite"><block type="variables_get" id="0#:viR%)S-{B{0mQ-Ol~"><field name="VAR" id="$+a_d=daw8Rg~A18oTEN">Cazador2</field></block></value><value name="value"><shadow type="math_number" id="~21`A=|O*ji*xdA2onu,"><field name="NUM">200</field></shadow></value><next><block type="spritesetpos" id="B2rku`-%@916$6;+MFRd"><value name="sprite"><block type="variables_get" id="+hxonMrmv,3EIy5XE,|y"><field name="VAR" id="$+a_d=daw8Rg~A18oTEN">Cazador2</field></block></value><value name="x"><shadow type="positionPicker"><field name="index">0</field></shadow><block type="argument_reporter_number" id="2MvB@J%}o$zb`v*_|1u6"><field name="VALUE">x</field></block></value><value name="y"><shadow type="positionPicker"><field name="index">0</field></shadow><block type="argument_reporter_number" id="_9QM9j+~F6Uf`NpbYNWT"><field name="VALUE">y</field></block></value><next><block type="spriteFollowOtherSprite" id="r^5EUQg;mSV(.|(B.Tom"><mutation xmlns="http://www.w3.org/1999/xhtml" _expanded="0" _input_init="false"></mutation><value name="sprite"><block type="variables_get" id="nMV?)ysM#7-m#}p(g]I4"><field name="VAR" id="$+a_d=daw8Rg~A18oTEN">Cazador2</field></block></value><value name="target"><block type="variables_get" id="#ab1tG!tG{.)S]DX!Tv!"><field name="VAR" id="7g{Z~o]{#q1wsZuUaSo=">Mario</field></block></value></block></next></block></next></block></next></block></statement></block><block type="spriteshittile" id="EDx~Z~EytJ%rK(WY_f%z" x="1668" y="1036"><value name="HANDLER_DRAG_PARAM_sprite"><shadow type="argument_reporter_custom" id="C$v{Q+LrtqT`XGZR*jC|"><mutation typename="Sprite"/><field name="VALUE">sprite</field></shadow></value><value name="kind"><shadow type="spritekind" id="];7`Y5cGL{rflnPlf+U:"><field name="MEMBER">Player</field></shadow></value><value name="tile"><shadow type="tileset_tile_picker"><field name="tile">myTiles.transparency16</field></shadow><block type="tileset_tile_picker" id="lQjR]gi=+ginqf,kjN^{"><field name="tile">myTiles.tile4</field></block></value><value name="HANDLER_DRAG_PARAM_location"><shadow type="argument_reporter_custom" id="T{XwRhAh3:$|Ne?,/:av"><mutation typename="tiles.Location"/><field name="VALUE">location</field></shadow></value><statement name="HANDLER"><block type="hudChangeLifeBy" id="/Zb[NsOKe*=AFN!XVsJe"><value name="value"><shadow type="math_number" id="vk_h2IDU.!R6:]6.){L!"><field name="NUM">-1</field></shadow></value><next><block type="spritesetpos" id="7gVmS*II!(=toqY:Pi^("><value name="sprite"><block type="variables_get" id="wF$C[W!|+h`;jc.QkDG2"><field name="VAR" id="7g{Z~o]{#q1wsZuUaSo=">Mario</field></block></value><value name="x"><shadow type="positionPicker" id="(7,unrdp=A?9bjIj-,R]"><field name="index">0</field></shadow></value><value name="y"><shadow type="positionPicker" id="|Pj=6T{fB!s:^0CPW%@s"><field name="index">30</field></shadow></value></block></next></block></statement></block><block type="spriteshittile" id="!C^x{fo0T|L~9.iosn0!" x="40" y="1260"><value name="HANDLER_DRAG_PARAM_sprite"><shadow type="argument_reporter_custom" id="(tq8]^pUxSFn)J,k2%+x"><mutation typename="Sprite"/><field name="VALUE">sprite</field></shadow></value><value name="kind"><shadow type="spritekind" id="Y}udW2US9CQXJ.Re0lBV"><field name="MEMBER">Player</field></shadow></value><value name="tile"><shadow type="tileset_tile_picker"><field name="tile">myTiles.transparency16</field></shadow><block type="tileset_tile_picker" id="uR*aq:}=Fn=~*!Fj;.=}"><field name="tile">myTiles.tile2</field></block></value><value name="HANDLER_DRAG_PARAM_location"><shadow type="argument_reporter_custom" id="vOJw4hA58EpMQ^.JDZL1"><mutation typename="tiles.Location"/><field name="VALUE">location</field></shadow></value><statement name="HANDLER"><block type="hudChangeLifeBy" id="}5NbtAC`|mFj1Rl9zZ:q"><value name="value"><shadow type="math_number" id="3qJ0~P~ra:Hb0Ep66TM$"><field name="NUM">-1</field></shadow></value><next><block type="spritesetpos" id="?lds!.epqjY+sfL#;z+c"><value name="sprite"><block type="variables_get" id="lR!]!:uJU4c0^[GFa0Ik"><field name="VAR" id="7g{Z~o]{#q1wsZuUaSo=">Mario</field></block></value><value name="x"><shadow type="positionPicker" id=";hYttz0#[7FrO424Bq%%"><field name="index">1</field></shadow></value><value name="y"><shadow type="positionPicker" id="gep{rEfw@MxB?h!yB1n$"><field name="index">14</field></shadow></value></block></next></block></statement></block><block type="spritesoverlap" id="idCIWmrX{VO.}bZI!x*T" disabled="true" x="1290" y="1270"><value name="HANDLER_DRAG_PARAM_sprite"><shadow type="argument_reporter_custom" id="mKA8*zgo^+-G~W(7J;3[" disabled="true"><mutation typename="Sprite"/><field name="VALUE">sprite</field></shadow></value><value name="kind"><shadow type="spritekind" id="t%`4FI-`(?)vNrz=}dGj" disabled="true"><field name="MEMBER">Projectile</field></shadow></value><value name="HANDLER_DRAG_PARAM_otherSprite"><shadow type="argument_reporter_custom" id="[,|MCO_*n)%QAxZ8dRqN" disabled="true"><mutation typename="Sprite"/><field name="VALUE">otherSprite</field></shadow></value><value name="otherKind"><shadow type="spritekind" id="WOLr#xg5q4vOMB#b%Fo/" disabled="true"><field name="MEMBER">Enemy</field></shadow></value><statement name="HANDLER"><block type="spritedestroy" id="vLES51~[cJwQ2m%=~UTw" disabled="true"><mutation xmlns="http://www.w3.org/1999/xhtml" _expanded="2" _input_init="true"></mutation><field name="effect">effects.fire</field><value name="sprite"><block type="variables_get" id="rM0i4_A@_=_1+MlKgvFR" disabled="true"><field name="VAR" id="D2OoxsjW,psW~5mS@#y=">Cazador</field></block></value><value name="duration"><shadow type="timePicker" id="9Bfy=1OIl?dCes)mlp)V" disabled="true"><field name="ms">500</field></shadow></value><next><block type="hudChangeScoreBy" id="I7ef26JcA2UU%!,S{-cH" disabled="true"><value name="value"><shadow type="math_number" id="28%=;-^bgA/FrFVw^$?;" disabled="true"><field name="NUM">5</field></shadow></value></block></next></block></statement></block><block type="spriteshittile" id="DSX_v!YCz26Ui/sac$J~" x="1790" y="1250"><value name="HANDLER_DRAG_PARAM_sprite"><shadow type="argument_reporter_custom" id="m)k]XKMrZFTv]-olunNp"><mutation typename="Sprite"/><field name="VALUE">sprite</field></shadow></value><value name="kind"><shadow type="spritekind" id="Khnca;;061:t:~yb@`-a"><field name="MEMBER">Player</field></shadow></value><value name="tile"><shadow type="tileset_tile_picker"><field name="tile">myTiles.transparency16</field></shadow><block type="tileset_tile_picker" id="~DYu|E;!OD.*ODeB++xW"><field name="tile">myTiles.tile5</field></block></value><value name="HANDLER_DRAG_PARAM_location"><shadow type="argument_reporter_custom" id="-w6Z6*;|(i_A0yuLrm/8"><mutation typename="tiles.Location"/><field name="VALUE">location</field></shadow></value><statement name="HANDLER"><block type="hudChangeLifeBy" id="]G1%C%8k@w@sOJtkJ{:O"><value name="value"><shadow type="math_number" id="9_f{(^%I^:Y-qsSbw%S6"><field name="NUM">-1</field></shadow></value><next><block type="spritesetpos" id="e$(?Si,=@}z`H8jcp(HU"><value name="sprite"><block type="variables_get" id="Y#hk8,0+x`sI1`).R!Pf"><field name="VAR" id="7g{Z~o]{#q1wsZuUaSo=">Mario</field></block></value><value name="x"><shadow type="positionPicker" id="Z/`$v/fy5L3ASUL-{O]0"><field name="index">0</field></shadow></value><value name="y"><shadow type="positionPicker" id="0m#P!,tB3p2-2$B5S7nM"><field name="index">30</field></shadow></value></block></next></block></statement></block><block type="function_definition" id="`I1VIC`j-G2LpjX,}F3B" x="850" y="1310"><mutation name="cazador3" functionid="PII[,3|uB4]+g}G_vtKf"><arg name="x" id="/x0.F{PfKEy1_QJWb8NT" type="number"/><arg name="y" id="gcv-jP6hAR*qOJxEt^XO" type="number"/></mutation><field name="function_name">cazador3</field><statement name="STACK"><block type="variables_set" id="^4l,=O-=c0T!b3.B,31m"><field name="VAR" id="$+a_d=daw8Rg~A18oTEN">Cazador2</field><value name="VALUE"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number"><field name="NUM">0</field></shadow><block type="spritescreate" id="IY_$3vZn`.E?C,)aBFcF"><value name="img"><shadow type="screen_image_picker"><field name="img">img`
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . f f f . . . . . . . . . . . . . . 
+. . . . f f f f f 2 f . . . . . . . . . . . . . 
+. . f f e e e e e 2 2 f f . . . . . . . . . . . 
+. f f e e e e e e 2 2 2 f f . . . . . . . . . . 
+. f e e e e f f f e e e e f . . . . . . . . . . 
+. f f f f f e e e 2 2 2 2 e f . . . . . . . . . 
+f f f e 2 2 2 f f f f f e 2 f . . . . . . . . . 
+f f f f f f f f f e e e f f f . . . . . c c . . 
+f e f e 4 4 e b b f 4 4 e e f . . . c c d c . . 
+. f e e 4 d 4 b b f d d e f . . c c d d c c . . 
+. . f e e e 4 d d d d d f e e c d d d c . . . . 
+. . . f 2 2 2 2 2 2 2 e e d d c d c c . . . . . 
+. . . f 4 4 4 4 4 5 e 4 4 d d c c c . . . . . . 
+. . . f f f f f f f f e e e e . . . . . . . . . 
+. . . f f f . . . f f . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+`</field></shadow><block type="screen_image_picker" id="Wr,)P:f%Z.Ws+!),pvqf"><field name="img">img`
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . f f f . . . . . . . 
+. . . . . . . . . . . . . f 2 f f f f f . . . . 
+. . . . . . . . . . . f f 2 2 e e e e e f f . . 
+. . . . . . . . . . f f 2 2 2 e e e e e e f f . 
+. . . . . . . . . . f e e e e f f f e e e e f . 
+. . . . . . . . . f e 2 2 2 2 e e e f f f f f . 
+. . . . . . . . . f 2 e f f f f f 2 2 2 e f f f 
+. . c c . . . . . f f f e e e f f f f f f f f f 
+. . c d c c . . . f e e 4 4 f b b e 4 4 e f e f 
+. . c c d d c c . . f e d d f b b 4 d 4 e e f . 
+. . . . c d d d c e e f d d d d d 4 e e e f . . 
+. . . . . c c d c d d e e 2 2 2 2 2 2 2 f . . . 
+. . . . . . c c c d d 4 4 e 5 4 4 4 4 4 f . . . 
+. . . . . . . . . e e e e f f 1 f f f f f . . . 
+. . . . . . . . . . . . . f f . . . f f f . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . 
+`</field></block></value><value name="kind"><shadow type="spritekind" id="z|!j_}g7*5jp+}SajJae"><field name="MEMBER">Enemy</field></shadow></value></block></value><next><block type="Sprite_blockCombine_set" id="[+@9R)zpqS,eKM$J:_QY"><field name="property">Sprite.ay@set</field><value name="mySprite"><block type="variables_get" id="7#p2$:nTZ%J^7}l:j?H:"><field name="VAR" id="$+a_d=daw8Rg~A18oTEN">Cazador2</field></block></value><value name="value"><shadow type="math_number" id="7qz~L$pX=_mQ;VH2OwGS"><field name="NUM">200</field></shadow></value><next><block type="spritesetpos" id="Ak?#|;Vnrd^.8Bh]d7DR"><value name="sprite"><block type="variables_get" id="K{ijNJVev:W+Zyr%|8o?"><field name="VAR" id="$+a_d=daw8Rg~A18oTEN">Cazador2</field></block></value><value name="x"><shadow type="positionPicker"><field name="index">0</field></shadow><block type="argument_reporter_number" id="sS]WTMabA`jv)xW[8c$-"><field name="VALUE">x</field></block></value><value name="y"><shadow type="positionPicker"><field name="index">0</field></shadow><block type="argument_reporter_number" id="7t1$mUAcv[}`c!J.s!Ml"><field name="VALUE">y</field></block></value><next><block type="spriteFollowOtherSprite" id="T_,m0cy2Jv6J%rvk,57n"><mutation xmlns="http://www.w3.org/1999/xhtml" _expanded="0" _input_init="false"></mutation><value name="sprite"><block type="variables_get" id="7;?E*#iX3~yVA;qb@l4C"><field name="VAR" id="$+a_d=daw8Rg~A18oTEN">Cazador2</field></block></value><value name="target"><block type="variables_get" id=";PNO$FeO~ajF**SHxu0v"><field name="VAR" id="7g{Z~o]{#q1wsZuUaSo=">Mario</field></block></value></block></next></block></next></block></next></block></statement></block></xml>
